@@ -10,16 +10,16 @@ isCacheParameter = False
 isCpuParameter = True
 initialValue = 50 #parameter's initial value
 incrementValue = 5 #parameter's increment value
-numIterations = 50 #total number of interations
+numIterations = 5 #total number of interations
 statsFilePath = 'm5out/stats.txt' #path to the stats.txt file, where the simulation's output will be.
-tLine = 2 #line were the execution time will be written in stats.txt at the end of the simulation
-ipcLine = 376 #line were the ipc will be written in stats.txt at the end of the simulation
+tLine = 3 #line were the execution time will be written in stats.txt at the end of the simulation
+ipcLine = 374 #line were the ipc will be written in stats.txt at the end of the simulation
 outputDirPath = 'BenchmarkResults' #name of the dir where the IPC and time execution will be written by this program.
 outputFileName = 'quicksort-numRegs.txt' #name of the file where the IPC and time execution will be written by this program.
 outputFilePath = os.path.join(outputDirPath, outputFileName)
 
-if not os.isdir(outputDirPath):
-	os.mkdir(outputDirPath)
+if not os.path.isdir(outputDirPath):
+    os.mkdir(outputDirPath)
 
 	
 assert (isCacheParameter and isCpuParameter) is False #the parameter can't be simoutaneously a cache and cpu parameter
@@ -52,21 +52,14 @@ for i in range(numIterations):
 	#open the simulation output file, search for the desired outputs (ipc and execution time), read them and close
 	statsFile = open(statsFilePath, 'r')
 	statsLine = statsFile.readlines()
-	executionSeconds = statsLine[tLine]
-	executionIpc = statsLine[ipcLine]
+	executionSeconds = statsLine[tLine-1].split()[1]
+	executionIpc = statsLine[ipcLine-1].split()[1]
 	
 	statsFile.close()
 	
 	#open the output file, write the new information, save and close
-	outputFile = open(outputFilePath, 'r')
-	outputFileLines = outputFile.readlines()
-	outputFileLines.append('\n')
-	outputFileLines.append('Parameter: ' + parameterVariableName + ' Value: ' + parameterValue + '\n')
-	outputFileLines.append(executionSeconds)
-	outputFileLines.append(executionIpc)
-	outputFile = open(outputFilePath, 'w')
-	outputFile.writelines(outputFileLines)
-
+	outputFile = open(outputFilePath, 'a+')
+	outputFile.write('Tempo: '+str(executionSeconds)+' IPC: '+str(executionIpc)+'\n')
 	outputFile.close()
 	
 	#increments the parameter's value

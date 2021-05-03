@@ -1,5 +1,6 @@
 #makes the benchmark that will produce the results for a parameter using 1 algorithm.
 import os
+import subprocess
 
 algorithmFilePath = './codes/quicksort' #path to the algorithm that will be benchmarked (the exe file)
 cacheFilePath = './orgb_configs/systems/caches/basic_caches.py' #path to the file where the cpu specs will be
@@ -53,7 +54,9 @@ for i in range(numIterations):
 	statsFile = open(statsFilePath, 'r')
 	statsLine = statsFile.readlines()
 	executionSeconds = statsLine[tLine-1].split()[1]
-	executionIpc = statsLine[ipcLine-1].split()[1]
+	executionIpc = subprocess.run(['grep', '-oP','issued_per_cycle::mean\\s+\\K\\w+[.]\w+', statsFilePath], stdout=subprocess.PIPE).stdout.decode('utf-8')[:-1]
+
+
 	
 	statsFile.close()
 	

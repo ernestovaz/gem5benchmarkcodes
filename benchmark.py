@@ -25,10 +25,10 @@ if not os.path.isdir(outputDirPath):
 
 
 assert (isCacheParameter and isCpuParameter) is False #the parameter can't be simoutaneously a cache and cpu parameter
-parameterValue = initialValue
+
 
 for index, algPath in enumerate(algorithmFilePaths):
-
+	parameterValue = initialValue
 	algName = algNames[index]
 	print("Benchmarking Algorithm: " + algName)
 	outputFile = open(outputFilePath, 'a+')

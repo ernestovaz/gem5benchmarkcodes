@@ -73,7 +73,7 @@ for index, algPath in enumerate(algorithmFilePaths):
 		
 		#open the output file, write the new information, save and close
 		outputFile = open(outputFilePath, 'a+')
-		outputFile.write('Tempo: '+str(executionSeconds)+' IPC: '+str(executionIpc)+'\n' + 'Parameter Value: ' + str(parameterValue))
+		outputFile.write('Tempo: '+str(executionSeconds)+' IPC: '+str(executionIpc)+' ' + 'Parameter Value: ' + str(parameterValue) + '\n')
 		outputFile.close()
 		
 		#increments the parameter's value

@@ -1,0 +1,36 @@
+
+Benchmarking Algorithm: quicksort
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 1
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 2
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 4
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 8
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 16
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 32
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 64
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 128
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 256
+Tempo: 0.001073 IPC: 1.222291 Parameter Value: 512
+
+Benchmarking Algorithm: radixsort
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 1
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 2
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 4
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 8
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 16
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 32
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 64
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 128
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 256
+Tempo: 0.009017 IPC: 0.947511 Parameter Value: 512
+
+Benchmarking Algorithm: fft
+Tempo: 0.002815 IPC: 1.429170 Parameter Value: 1
+Tempo: 0.002815 IPC: 1.429232 Parameter Value: 2
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 4
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 8
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 16
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 32
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 64
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 128
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 256
+Tempo: 0.002814 IPC: 1.429337 Parameter Value: 512
